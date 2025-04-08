@@ -39,7 +39,15 @@ def calcular_fitness(individuo):
     return valor_total
 
 def seleccion_ruleta(poblacion, fitnesses):
-    pass
+    total_fitness = sum(fitnesses)
+    if total_fitness == 0:
+        return random.choice(poblacion)
+    pick = random.uniform(0, total_fitness)
+    current = 0
+    for individuo, fit in zip(poblacion, fitnesses):
+        current += fit
+        if current > pick:
+            return individuo
 
 def crossover(padre1, padre2):
     punto = random.randint(1, len(padre1) - 1)
