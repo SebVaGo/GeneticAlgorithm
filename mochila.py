@@ -42,7 +42,8 @@ def seleccion_ruleta(poblacion, fitnesses):
     pass
 
 def crossover(padre1, padre2):
-    pass
+    punto = random.randint(1, len(padre1) - 1)
+    return padre1[:punto] + padre2[punto:]
 
 def mutar(individuo):
     for i in range(len(individuo)):
