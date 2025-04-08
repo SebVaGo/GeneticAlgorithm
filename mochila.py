@@ -45,4 +45,7 @@ def crossover(padre1, padre2):
     pass
 
 def mutar(individuo):
-    pass
+    for i in range(len(individuo)):
+        if random.random() < TASA_MUTACION:
+            individuo[i] = 1 - individuo[i]
+    return individuo
