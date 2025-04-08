@@ -26,3 +26,23 @@ def generar_individuo():
 
 def generar_poblacion():
     return [generar_individuo() for _ in range(TAMANO_POBLACION)]
+
+def calcular_fitness(individuo):
+    peso_total = 0.0
+    valor_total = 0
+    for i in range(len(individuo)):
+        if individuo[i] == 1:
+            peso_total += objetos[i]["peso"]
+            valor_total += objetos[i]["valor"]
+    if peso_total > CAPACIDAD_MAXIMA:
+        return 0
+    return valor_total
+
+def seleccion_ruleta(poblacion, fitnesses):
+    pass
+
+def crossover(padre1, padre2):
+    pass
+
+def mutar(individuo):
+    pass
